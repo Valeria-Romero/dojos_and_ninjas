@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Dojo show</title>
+</head>
+    <body>      
+    <div class="table_container">
+        <div class="top_information">
+                    <h1>{{dojos}} ninjas</h1>
+                    <a href="/dojos" class="dojo_link">Home</a>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <td>First Name</td>
+                    <td>Last Name</td>
+                    <td>Age</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ninja in ninjas %}
+                <tr>
+                    <td>{{ninja['first_name']}}</td>
+                    <td>{{ninja['last_name']}}</td>
+                    <td>{{ninja['age']}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
